@@ -13,6 +13,7 @@ class BlumBlumShub:
         seed = random.getrandbits(bits)
         self.set_seed(seed)
 
+    @staticmethod
     def get_prime(bits):
         p = 0
         while True:
@@ -70,6 +71,13 @@ class Tests:
                 else:
                     result[num] += 1
         return result
+        # count = sum(result.values())
+        # _sum = sum([x*x for x in result.values()])
+        # p = (16/count)*_sum
+        # print(p)
+        # if 2.16 <= p <= 46.17:
+        #    return True
+        # return False
 
     def runs(self):
         result = {
@@ -105,6 +113,7 @@ if __name__ == "__main__":
 
     for i in range(amount):
         number = bbs.next(number_bits)
+        #  print('bin: {:032b}'.format(number) + ' dec: %d' % (int(number)) + ' hex {:0X}'.format(number))
         sum_ += number
         sum_ <<= 32  # sys.getsizeof(number)
     sum_ >>= 32
